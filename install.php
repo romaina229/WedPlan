@@ -1,6 +1,6 @@
 <?php
 // Chargement du fichier SQL
-$sql = file_get_contents('database.sql');
+$sql = file_get_contents('includes/database.sql');
 
 // Vérification si le fichier existe
 if ($sql === false) {
