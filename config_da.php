@@ -19,9 +19,9 @@ defined('DB_NAME') || define('DB_NAME', getenv('DB_NAME') ?: 'railway');
 defined('DB_CHARSET') || define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
 
 // Configuration du système de parrains
-define('SPONSOR_SESSION_KEY', 'wedding_sponsor_logged_in');
+define('SPONSOR_SESSION_KEY', 'railway_sponsor_logged_in');
 define('SPONSOR_ID_KEY', 'sponsor_id');
-define('SPONSOR_WEDDING_ID_KEY', 'sponsor_wedding_dates_id');
+define('SPONSOR_RAILWAY_ID_KEY', 'sponsor_wedding_dates_id');
 define('SPONSOR_NAME_KEY', 'sponsor_name');
 define('SPONSOR_ROLE_KEY', 'sponsor_role');
 
@@ -87,7 +87,7 @@ function getSponsorId() {
  * Fonction pour obtenir l'ID du mariage supervisé
  */
 function getSponsorWeddingId() {
-    return $_SESSION[SPONSOR_WEDDING_ID_KEY] ?? null;
+    return $_SESSION[SPONSOR_RAILWAY_ID_KEY] ?? null;
 }
 
 /**
@@ -133,7 +133,7 @@ function logoutSponsor() {
     // Détruire les variables de session
     unset($_SESSION[SPONSOR_SESSION_KEY]);
     unset($_SESSION[SPONSOR_ID_KEY]);
-    unset($_SESSION[SPONSOR_WEDDING_ID_KEY]);
+    unset($_SESSION[SPONSOR_RAILWAY_ID_KEY]);
     unset($_SESSION[SPONSOR_NAME_KEY]);
     unset($_SESSION[SPONSOR_ROLE_KEY]);
     
