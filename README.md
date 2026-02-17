@@ -1,4 +1,4 @@
-# 💒 Budget Mariage PJPM — v2.1
+# 💒 Budget Mariage PJPM — v2.3
 > Application PWA de gestion de budget de mariage — Production Ready
 
 ---

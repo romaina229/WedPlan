@@ -11,10 +11,10 @@ if (!defined('ROOT_PATH')) {
  * Exécutez ce fichier UNE SEULE FOIS pour initialiser l'application.
  */
 
-$host   = 'localhost';
+$host   = 'mysql.railway.internal';
 $user   = 'root';
-$pass   = '';
-$dbname = 'wedding';
+$pass   = 'nMqegwkQMJgYaoJiTFiykVxgubYZOEFf';
+$dbname = 'railway';
 
 $steps  = [];
 $errors = [];
