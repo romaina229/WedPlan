@@ -12,23 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
    Base de données — compatible variables d'environnement
    ===================================================== */
 
-defined('DB_HOST') || define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-defined('DB_USER') || define('DB_USER', getenv('DB_USER') ?: 'root');
-defined('DB_PASS') || define('DB_PASS', getenv('DB_PASS') ?: '');
-defined('DB_NAME') || define('DB_NAME', getenv('DB_NAME') ?: 'railway');
-defined('DB_CHARSET') || define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
-
-// ===== Session =====
-define('SESSION_TIMEOUT', 1800);
-define('SESSION_NAME',    'wedding_session');
-
-// ===== Application =====
-define('APP_NAME',     'WedPlan');
-define('APP_VERSION',  '2.0.3');
-define('APP_URL',      getenv('APP_URL') ?: 'http://localhost');
-define('APP_CURRENCY', 'FCFA');
-define('APP_LOCALE',   'fr-FR');
-define('APP_TIMEZONE', 'Africa/Porto-Novo');
+require_once __DIR__ . '/config.php';
 
 // Configuration du système de parrains
 define('SPONSOR_SESSION_KEY', 'wedding_sponsor_logged_in');
