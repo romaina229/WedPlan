@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styles du badge mariage */
+#wedding-date-banner {
+    background: linear-gradient(135deg, #8b4f8d 0%, #5d2f5f 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 15px auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 79, 141, 0.3);
+    animation: slideIn 0.5s ease-out;
+    border: 2px solid #d4af37;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.countdown-icon {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.countdown-text {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.countdown-text .label {
+    font-weight: 600;
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.countdown-text .date {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    font-size: 1.2rem;
+}
+
+.countdown-text .countdown {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.edit-date-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-date-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(15deg);
+}
+
+/* Section informations fiancés */
+.wedding-header {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.wedding-header::before {
+    content: '❤️';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 120px;
+    opacity: 0.05;
+    transform: rotate(15deg);
+}
+
+.couple-names {
+    font-size: 42px;
+    font-weight: 700;
+    color: #8b4f8d;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(139, 79, 141, 0.1);
+    font-family: 'Playfair Display', serif;
+}
+
+.wedding-date-info {
+    font-size: 20px;
+    color: #5d2f5f;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.budget-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.budget-card {
+    background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+    padding: 20px 30px;
+    border-radius: 15px;
+    min-width: 200px;
+    border: 1px solid rgba(139, 79, 141, 0.2);
+}
+
+.budget-card .label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.budget-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #8b4f8d;
+}
+
+.budget-card .small {
+    font-size: 14px;
+    color: #999;
+    margin-left: 5px;
+}
+
+/* Section commentaires */
+.sponsor-comments-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title i {
+    color: #8b4f8d;
+}
+
+.comment-card {
+    background: #f7fafc;
+    border-left: 4px solid #8b4f8d;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.comment-header strong {
+    color: #8b4f8d;
+    font-size: 16px;
+}
+
+.sponsor-badge {
+    background: #8b4f8d20;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: #8b4f8d;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.comment-date {
+    color: #666;
+    font-size: 13px;
+}
+
+.comment-body {
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #8b4f8d 0%, #5d2f5f 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 79, 141, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #8b4f8d;
+    color: #8b4f8d;
+}
+
+.btn-outline:hover {
+    background: #8b4f8d;
+    color: white;
+}
+
+.btn-link {
+    color: #8b4f8d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #5d2f5f;
+    text-decoration: underline;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8e3dd;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #8b4f8d;
+    font-size: 24px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #8b4f8d;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group .required {
+    color: #e74c3c;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e8e3dd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #8b4f8d;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 79, 141, 0.1);
+}
+
+.preview-card {
+    background: #faf8f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.image-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.couple-image {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.couple-image:hover {
+    transform: scale(1.02);
+}
+
+.quote {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    font-style: italic;
+    border-left: 5px solid #8b4f8d;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.menu-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 28px;
+    }
+    
+    .budget-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .budget-card {
+        width: 100%;
+    }
+    
+    #wedding-date-banner {
+        margin: 10px;
+        padding: 10px 15px;
+    }
+    
+    .countdown-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+}
+        /* AJOUTER CES STYLES POUR LES COMMENTAIRES */
+        .sponsor-comments-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title i {
+            color: #8b4f8d;
+        }
+
+        .comment-card {
+            background: #f7fafc;
+            border-left: 4px solid #8b4f8d;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .comment-header strong {
+            color: #8b4f8d;
+            font-size: 16px;
+        }
+
+        .sponsor-badge {
+            background: #8b4f8d20;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #8b4f8d;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .comment-date {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .comment-body {
+            color: #333;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .btn-link {
+            color: #8b4f8d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-link:hover {
+            color: #5d2f5f;
+            text-decoration: underline;
+        }
+
+        .empty-comments {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .empty-comments i {
+            font-size: 48px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .empty-comments h3 {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .empty-comments p {
+            color: #999;
+            margin-top: 10px;
+        }

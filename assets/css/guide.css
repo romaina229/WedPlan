@@ -1,0 +1,252 @@
+.guide-container {
+    max-width: 1200px;
+    margin: 90px auto 40px;
+    padding: 20px;
+}
+
+/* ===== HERO SECTION ===== */
+.guide-hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255,255,255,.12), transparent 70%);
+    border-radius: 50%;
+}
+
+.guide-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.guide-hero p {
+    opacity: .9;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* ===== TIMELINE - VERSION CORRIGÉE (CÔTÉ GAUCHE UNIQUEMENT) ===== */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ligne verticale à gauche */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;  /* Fixé à gauche */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+/* Élément de la timeline */
+.tl-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 80px;  /* Espace pour le marker et la ligne */
+    display: block;  /* Retirer le flex */
+}
+
+/* Marker circulaire - TOUJOURS À GAUCHE */
+.tl-marker {
+    position: absolute;
+    left: 8px;  /* Centré sur la ligne */
+    top: 20px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 16px var(--shadow);
+    z-index: 10;
+    border: 3px solid white;
+}
+
+/* Contenu - TOUJOURS À DROITE DU MARKER */
+.tl-content {
+    background: var(--bg-card);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: transform .3s, box-shadow .3s;
+    width: 100%;
+    margin-left: 0;  /* Supprimer les marges conditionnelles */
+    position: relative;
+}
+
+.tl-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* Badge d'étape */
+.step-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: .85rem;
+    margin-bottom: 12px;
+}
+
+/* Titre */
+.step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+/* Description */
+.step-desc {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: .95rem;
+}
+
+/* Liste des tâches */
+.step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.step-list li {
+    padding: 7px 0 7px 28px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: .93rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.step-list li:last-child {
+    border-bottom: none;
+}
+
+.step-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Astuce / Conseil */
+.step-tip {
+    background: #e3f2fd;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 14px;
+    border-left: 4px solid #2196f3;
+    font-size: .9rem;
+}
+
+.step-tip strong {
+    color: #1565c0;
+}
+
+/* Durée */
+.step-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-main);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: .85rem;
+    color: var(--text-secondary);
+    margin-top: 14px;
+}
+
+/* Boutons CTA */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: transform .3s, box-shadow .3s;
+    margin: 8px;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.btn-cta-sec {
+    background: linear-gradient(135deg, var(--secondary), #c9a438);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .guide-container {
+        padding: 10px;
+    }
+    
+    .guide-hero {
+        padding: 30px 20px;
+    }
+    
+    .guide-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .timeline::before {
+        left: 25px;  /* Ajustement mobile */
+    }
+    
+    .tl-item {
+        padding-left: 60px;
+    }
+    
+    .tl-marker {
+        left: 3px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .tl-content {
+        padding: 20px;
+    }
+    
+    .step-title {
+        font-size: 1.3rem;
+    }
+}
