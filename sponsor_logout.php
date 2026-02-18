@@ -6,7 +6,7 @@
  * @subpackage SponsorSystem
  */
 
-require_once __DIR__ . '/config_da.php';
+require_once __DIR__ . '/config.php';
 
 // Déconnexion du parrain
 logoutSponsor();

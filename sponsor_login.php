@@ -6,7 +6,7 @@
  * @subpackage SponsorSystem
  */
 
-require_once '/config_da.php';
+require_once __DIR__ . '/config.php';
 
 // Si déjà connecté, rediriger vers le tableau de bord
 if (isSponsorLoggedIn()) {

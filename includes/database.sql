@@ -202,7 +202,7 @@ INSERT IGNORE INTO `categories` (`name`, `color`, `icon`, `display_order`) VALUE
     ('Bénédiction nuptiale', '#2ecc71', 'fas fa-church',               4),
     ('Logistique',           '#1abc9c', 'fas fa-truck',                5),
     ('Réception',            '#f39c12', 'fas fa-glass-cheers',         6),
-    ('Coût indirect',        '#95a5a6', 'fas fa-exclamation-triangle', 7);
+    ('Coût indirect et impévu',        '#95a5a6', 'fas fa-exclamation-triangle', 7);
 
 -- ------------------------------------------------------------
 -- 11. Compte administrateur

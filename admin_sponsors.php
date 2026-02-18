@@ -4,8 +4,7 @@
  * @subpackage AdminPanel
  */
 
-require_once __DIR__ . '/AuthManager.php';
-require_once __DIR__ . '/sponsor_config.php';
+require_once __DIR__ . '/config.php';
 
 // Démarrer la session correctement (avec le bon nom)
 AuthManager::startSession();
