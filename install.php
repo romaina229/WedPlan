@@ -1,22 +1,22 @@
 <?php
-// Chargement du fichier SQL
-$sql = file_get_contents('includes/database.sql');
+// Remplis avec tes infos Railway
+$host = getenv('MYSQL_HOST') ?: 'roundhouse.proxy.rlwy.net';
+$port = getenv('MYSQL_PORT') ?: '3306';
+$dbname = getenv('MYSQL_DATABASE') ?: 'railway';
+$user = getenv('MYSQL_USER') ?: 'root';
+$pass = getenv('MYSQL_PASSWORD') ?: '';
 
-// Vérification si le fichier existe
-if ($sql === false) {
-    die('Erreur lors du chargement du fichier SQL.');
-}
-
-// Exécution des requêtes SQL
 try {
-    // Connexion à la base de données
-    $dsn = 'mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME') . ';charset=' . getenv('DB_CHARSET');
-    $pdo = new PDO($dsn, getenv('DB_USER'), getenv('DB_PASS'));
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Exécution du fichier SQL
+    
+    // Lire le fichier SQL
+    $sql = file_get_contents('includes/database.sql');
+    
+    // Exécuter les requêtes
     $pdo->exec($sql);
-    echo "Base de données initialisée avec succès!";
+    
+    echo "✅ Base de données importée avec succès !";
 } catch (PDOException $e) {
-    echo "Erreur lors de l'exécution des requêtes SQL: " . $e->getMessage();
+    die("❌ Erreur : " . $e->getMessage());
 }
