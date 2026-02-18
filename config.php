@@ -20,7 +20,7 @@ define('SESSION_NAME',    'wedding_session');
 // ===== Application =====
 define('APP_NAME',     'WedPlan');
 define('APP_VERSION',  '2.0.3');
-define('APP_URL',      getenv('APP_URL') ?: 'http://localhost');
+define('APP_URL',      getenv('APP_URL') ?: '');
 define('APP_CURRENCY', 'FCFA');
 define('APP_LOCALE',   'fr-FR');
 define('APP_TIMEZONE', 'Africa/Porto-Novo');
