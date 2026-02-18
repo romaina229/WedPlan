@@ -6,11 +6,12 @@ declare(strict_types=1);
 // ================================================================
 
 // ===== Base de données =====
-defined('DB_HOST') || define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-defined('DB_USER') || define('DB_USER', getenv('DB_USER') ?: 'root');
-defined('DB_PASS') || define('DB_PASS', getenv('DB_PASS') ?: '');
-defined('DB_NAME') || define('DB_NAME', getenv('DB_NAME') ?: 'wedding');
-defined('DB_CHARSET') || define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
+defined('DB_HOST') || define('DB_HOST', getenv('MYSQL_HOST') ?: 'localhost');
+defined('DB_USER') || define('DB_USER', getenv('MYSQL_USER') ?: 'root');
+defined('DB_PASS') || define('DB_PASS', getenv('MYSQL_PASSWORD') ?: '');
+defined('DB_NAME') || define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'wedding');
+defined('DB_PORT') || define('DB_PORT', getenv('MYSQL_PORT') ?: '3306');
+defined('DB_CHARSET') || define('DB_CHARSET', getenv('MYSQL_CHARSET') ?: 'utf8mb4');
 
 // ===== Session GÉNÉRALE =====
 define('SESSION_TIMEOUT', 1800);
