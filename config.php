@@ -13,16 +13,41 @@ defined('DB_NAME') || define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'wedding');
 defined('DB_PORT') || define('DB_PORT', getenv('MYSQL_PORT') ?: '3306');
 defined('DB_CHARSET') || define('DB_CHARSET', getenv('MYSQL_CHARSET') ?: 'utf8mb4');
 
-// ===== Session GÉNÉRALE =====
+// ===== Session =====
 define('SESSION_TIMEOUT', 1800);
-define('SESSION_NAME', 'wedding_session');
+define('SESSION_NAME',    'wedding_session');
 
 // ===== Application =====
-define('APP_NAME', 'WedPlan');
-define('APP_VERSION', '2.0.3');
+define('APP_NAME',     'WedPlan');
+define('APP_VERSION',  '2.0.3');
+define('APP_URL',      getenv('APP_URL') ?: 'http://localhost');
 define('APP_CURRENCY', 'FCFA');
-define('APP_URL', 'http://localhost/');
+define('APP_LOCALE',   'fr-FR');
 define('APP_TIMEZONE', 'Africa/Porto-Novo');
+
+// ===== Chemins =====
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', __DIR__ . '/');
+}
+
+define('BACKUP_DIR',  ROOT_PATH . 'backups/');
+define('EXPORT_DIR',  ROOT_PATH . 'exports/');
+define('LOG_DIR',     ROOT_PATH . 'logs/');
+define('UPLOAD_DIR',  ROOT_PATH . 'uploads/');
+
+// ===== Limites =====
+define('MAX_EXPENSES_PER_USER', 500);
+define('MAX_CATEGORIES',        50);
+define('BACKUP_MAX_FILES',      10);
+
+date_default_timezone_set(APP_TIMEZONE);
+
+// Créer les dossiers nécessaires
+foreach ([BACKUP_DIR, EXPORT_DIR, LOG_DIR, UPLOAD_DIR] as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
+    }
+}
 
 // ===== Configuration PARRAINS =====
 define('SPONSOR_SESSION_KEY', 'wedding_sponsor_logged_in');
@@ -37,13 +62,6 @@ define('SPONSOR_CAN_UPDATE', false);
 define('SPONSOR_CAN_DELETE', false);
 define('SPONSOR_CAN_COMMENT', true);
 define('SPONSOR_CAN_VIEW_STATS', true);
-
-// ===== Chemins =====
-define('ROOT_PATH', __DIR__ . '/');
-define('BACKUP_DIR', ROOT_PATH . 'backups/');
-define('EXPORT_DIR', ROOT_PATH . 'exports/');
-define('LOG_DIR', ROOT_PATH . 'logs/');
-define('UPLOAD_DIR', ROOT_PATH . 'uploads/');
 
 date_default_timezone_set(APP_TIMEZONE);
 
