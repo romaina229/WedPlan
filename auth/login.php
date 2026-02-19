@@ -146,7 +146,7 @@ body{
     </form>
     <div class="divider">OU</div>
     <div class="link-row">
-      Connectez-vous en que Parrains/Conseillers <a href="../sponsor_login.php">Cliquez ici</a>
+      Connectez-vous en tant que <code>Parrains/Conseillers</code> : <a href="../sponsor_login.php">Ici</a>
     </div><br>
     <div class="link-row">
       Pas encore de compte ? <a href="register.php">S'inscrire</a>

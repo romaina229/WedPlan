@@ -97,7 +97,7 @@ body{
       Déjà un compte ? <a href="login.php">Se connecter</a>
     </div>
     <div>
-      <p style="color:black;margin-top:20px;text-align:center; font-size:12px;">Ici les Parrains/Conseillers ne peuvent pas créer de compte, leurs compte est généré sur l'espace des futurs mariés</p>
+      <p style="color:black;margin-top:20px;text-align:center; font-size:12px;">Ici les <code>Parrains/Conseillers</code> ne peuvent pas créer de compte, leurs compte est généré sur l'espace des futurs mariés</p>
     </div>
   </div>
 </div>
