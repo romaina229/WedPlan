@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: wedplan
+    runtime: docker
+    repo: https://github.com/votre-username/wedplan
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: wedplan-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: wedplan-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: wedplan-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: wedplan-db
+          property: database
+      - key: APP_URL
+        value: https://wedplan.onrender.com
+      - key: APP_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+
+databases:
+  - name: wedplan-db
+    databaseName: wedplan
+    user: wedplan_user
+    plan: free
+    ipAllowList: []
