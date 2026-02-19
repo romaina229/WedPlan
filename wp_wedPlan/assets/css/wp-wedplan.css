@@ -1,0 +1,31 @@
+.wp-wedplan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.wp-wedplan-card {
+  background: linear-gradient(135deg, #6c4cff, #8d72ff);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(108, 76, 255, 0.24);
+}
+
+.wp-wedplan-card h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.wp-wedplan-card p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wp-wedplan-expenses {
+  border: 1px solid #ececf1;
+  border-radius: 12px;
+  padding: 14px;
+}
