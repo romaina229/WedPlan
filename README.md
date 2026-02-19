@@ -178,3 +178,22 @@ wedding/
 
 ## 📄 Licence
 Projet privé — PJPM © 2025. Tous droits réservés.
+
+---
+
+## 🔌 Plugin WordPress : `wp_wedPlan`
+
+Un plugin WordPress prêt à installer est inclus dans `wp_wedPlan/`.
+
+### Fonctions incluses
+- Custom Post Type `wedplan_expense` pour stocker les dépenses
+- Tableau de bord front via shortcode `[wp_wedplan_dashboard]`
+- API REST `wp-wedplan/v1` (liste, création, mise à jour, suppression des dépenses)
+- Page d'administration `WedPlan` (devise, budget par défaut, date du mariage)
+- Assets CSS/JS dédiés
+
+### Installation rapide
+1. Copier le dossier `wp_wedPlan` dans `wp-content/plugins/`
+2. Activer le plugin depuis WordPress > Extensions
+3. Ajouter le shortcode `[wp_wedplan_dashboard]` dans une page
+4. Ajuster les paramètres dans `WP-Admin > WedPlan`
