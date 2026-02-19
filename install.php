@@ -10,7 +10,7 @@ $dbPort = getenv('MYSQL_PORT') ?: '3306';
 $dbUser = getenv('DB_USER') ?: 'root';
 $dbPass = getenv('DB_PASS') ?: '';
 $dbName = getenv('DB_NAME') ?: 'wedding';
-$sqlFile = __DIR__ . '/../includes/database.sql';
+$sqlFile = __DIR__ . 'includes/database.sql';
 
 echo "🔧 Importation de la base de données WedPlan\n";
 echo "============================================\n";
